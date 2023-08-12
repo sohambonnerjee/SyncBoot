@@ -6,6 +6,7 @@ epanech_kernel<- function(u){
   return(ifelse(abs(u)<=1, 3/4*(1-u^2), 0))
 }
 
+
 S0_gap<- function(i,j,b){
   s<- convolve(rep(1,j-i+1), epanech_kernel((i-j-1):(j-i+1)/(n*b)), type="open")[(j-i+2):(2*(j-i)+2)]
   return(s)
